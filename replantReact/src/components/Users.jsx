@@ -1,45 +1,41 @@
-import api from '../services/api';
-import { useEffect, useState } from 'react';
+import api from "../services/api";
+import { useEffect, useState } from "react";
 
 const Users = () => {
+    const [users, setUsers] = useState([]);
 
-    const [users, setUsers] = useState();
-
-    const getUsers = async () => {
-        const option = {
+    function getUsers() {
+        const options = {
             method: "GET",
-            url: "/users"
-        }
+            url: "/users",
+        };
 
-        // api.request(option).then((response) => {
-        //     console.log(response.data);
-        //     // setUsers(response.data);
-        // }).catch((error) => {
-        //     console.log(error);
-        //) }
-        try {
-            const response = await api.request(option)
-            setUsers(response.data);
-            console.log(response);
-        } catch (error) {
-            console.log(error);
-        }
+        api
+            .request(options)
+            .then((response) => {
+                setUsers(response.data);
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
     }
 
     useEffect(() => {
-        getUsers()
-    }, [])
-
+        getUsers();
+    }, []);
 
     return (
-            <div>
-                {users.map(user => {
-                    <span>{user.name}</span>
-                })}
-                {/* <span>{users}</span> */}
-            </div>
-    )
-}
+        <div>
+            {users.map((user) => (
+                <div>
+                    <h1 key={user.id}>{user.name}</h1>
+                    <span>{user.url}</span><br></br>
+                    <span>{user.region}</span>
+                </div>
+            ))}
+        </div>
+    );
+};
 
 export default Users;
-
