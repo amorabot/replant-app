@@ -1,22 +1,20 @@
-package br.com.replantapp.replant.user;
+package br.com.replantapp.replant.domain.user;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-@Entity(name = "users")
 @Table(name = "users")
+@Entity(name = "users")
 
-@Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @EqualsAndHashCode(of = "id")
 public class User {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     private String name;
     private String region;
     private String url;
@@ -28,3 +26,5 @@ public class User {
         url = userData.url();
     }
 }
+
+
