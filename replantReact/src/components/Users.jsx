@@ -1,3 +1,4 @@
+import axios from "axios";
 import api from "../services/api";
 import { useEffect, useState } from "react";
 
@@ -27,10 +28,11 @@ const Users = () => {
     }
 
     const handleSubmit = (event) => {
+        console.log(user)
         const options = {
             method: "POST",
             url: "/users",
-            body: user
+            data: user
         };
         api
             .request(options)
@@ -51,6 +53,8 @@ const Users = () => {
         getUsers();
     }, []);
 
+    
+
     return (
         <div>
             {users.map((user) => (
@@ -60,7 +64,7 @@ const Users = () => {
                     <span>{user.region}</span>
                 </div>
             ))}
-            <form onSubmit={handleSubmit}>
+            
                 <label>
                     Name: <input type="text" name="name" value={user.name} onChange={handleChange}/>
                 </label>
@@ -70,8 +74,8 @@ const Users = () => {
                 <label>
                     Url: <input type="text" name="url" value={user.url} onChange={handleChange}/>
                 </label>
-                <button type="submit">Enviar</button>
-            </form>
+                <button onClick={handleSubmit}>Enviar</button>
+            
         </div>
         
     );
