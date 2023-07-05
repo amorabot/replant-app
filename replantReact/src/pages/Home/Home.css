@@ -1,0 +1,131 @@
+#WelcomeSection {
+    background-image: url("../../assets/green_bg.png");
+    color: #fff;
+    padding: 16px 0;
+    color: #FEFFFF;
+}
+
+p {
+    font-family: Ubuntu;
+    font-style: normal;
+
+    line-height: normal;
+}
+
+h3 {
+    font-family: Ubuntu;
+    font-style: normal;
+
+    line-height: normal;
+}
+
+.welcome-title {
+    font-size: 32px;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.bold-main-name {
+    font-weight: bold;
+    font-size: 64px;
+    color: #fff;
+}
+
+.welcome-paragraph {
+    font-size: 20px;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 1.5px;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+}
+
+.btn-register {
+    border-radius: 60px;
+    background: #F4EAEA;
+    color: #0AB8BF;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+#WelcomeSection .row {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    border-radius: 24px;
+}
+
+#KnowTheProject {
+    background-image: linear-gradient(to bottom right, #faeee2, #c3e3db);
+    padding: 24px 0;
+}
+
+#KnowTheProject .title {
+    color: #FFA26E;
+    font-size: 60px;
+}
+
+#KnowTheProject .card {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #0F6164;
+}
+
+#KnowTheProject p {
+    font-size: 20px;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 768px) {
+    #KnowTheProject .card-container {
+        margin-top: 24px;
+    }
+}
+
+
+#OurFunctionalities {
+    background-image: linear-gradient(120deg, #faeee2, #21bdc9);
+    padding: 24px 0;
+}
+
+#OurFunctionalities .subtitle {
+    color: #0F6164;
+    font-size: 34px;
+}
+
+#OurFunctionalities .sub-text {
+    color: #0F6164;
+    font-size: 20px;
+
+}
+
+#OurFunctionalities .title {
+    font-size: 60px;
+    color: #0AB8BF;
+}
+
+#OurFunctionalities .small-text {
+    font-size: 30px;
+}
+
+@media(max-width: 768px) {
+    #OurFunctionalities  {
+        text-align: center;
+    }
+    .functionality-container-reversed {
+        flex-direction: column-reverse;
+    }
+}
+
+#Feedbacks {
+    background-image: linear-gradient(to bottom right, #faeee2, #c3e3db);
+    padding: 24px 0;
+}
+
+#Feedbacks .title {
+    color: #FFA26E;
+    font-size: 60px;
+}
