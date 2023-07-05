@@ -1,1 +1,0 @@
-//declaração das propriedades do card
