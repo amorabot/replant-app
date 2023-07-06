@@ -7,7 +7,6 @@ import lombok.*;
 
 @Entity(name = "enciclopedia_plantas")
 @Table(name = "enciclopedia_plantas")
-//@IdClass(EnciclopediaPlantasID.class)
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,16 +18,14 @@ public class EnciclopediaPlantas {
     @EmbeddedId
     private EnciclopediaPlantasID id = new EnciclopediaPlantasID();
 
-//    @Id
+    @MapsId("enciclopediaId")
     @JoinColumn(name = "enciclopedia_id")
     @ManyToOne(cascade = CascadeType.ALL)
-    @MapsId("enciclopediaId")
     private Enciclopedia enciclopedia;
 
-//    @Id
+    @MapsId("cardId")
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "card_planta_id")
-    @MapsId("cardId")
     private CardPlanta card;
 
 /*@ManyToOne relationship assumes that referenced entity exists. Foreign keys and database integrity ensure that these entities exist.*/
