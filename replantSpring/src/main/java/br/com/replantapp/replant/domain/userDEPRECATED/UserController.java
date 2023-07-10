@@ -1,8 +1,8 @@
-package br.com.replantapp.replant.controller;
+package br.com.replantapp.replant.domain.userDEPRECATED;
 
-import br.com.replantapp.replant.domain.user.User;
-import br.com.replantapp.replant.domain.user.UserRepository;
-import br.com.replantapp.replant.domain.user.UserRequestDTO;
+import br.com.replantapp.replant.domain.userDEPRECATED.User;
+import br.com.replantapp.replant.domain.userDEPRECATED.UserRepository;
+import br.com.replantapp.replant.domain.userDEPRECATED.UserRequestDTO;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
-
+@Deprecated
 @RestController
 //Indica que é um controller MVC, irá rotear os verbos HTTP para suas devidas funcionalidades, pra isso cria um Bean do Spring que será gerido
 @RequestMapping("/users")

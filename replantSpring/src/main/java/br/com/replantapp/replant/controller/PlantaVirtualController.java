@@ -4,6 +4,7 @@ import br.com.replantapp.replant.domain.PlantaVirtual.*;
 import br.com.replantapp.replant.domain.Sensor.Sensor;
 import br.com.replantapp.replant.domain.Sensor.SensorID;
 import br.com.replantapp.replant.domain.Sensor.SensorRepository;
+import br.com.replantapp.replant.domain.cardplanta.CardPlantaRepository;
 import br.com.replantapp.replant.domain.usuario.Usuario;
 import br.com.replantapp.replant.domain.usuario.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -25,6 +26,11 @@ public class PlantaVirtualController {
     UsuarioRepository usuarioRepository;
     @Autowired
     SensorRepository sensorRepository;
+    @Autowired
+    CardPlantaRepository cardRepository;
+    //TODO: alterar o plantavirtualResponse
+    //TODO: alterar o post
+    //TODO: alterar a tabela em si
 
     @GetMapping("/{userId}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")

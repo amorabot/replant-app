@@ -1,4 +1,4 @@
-package br.com.replantapp.replant.domain.user;
+package br.com.replantapp.replant.domain.userDEPRECATED;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,6 +1,7 @@
 package br.com.replantapp.replant.domain.PlantaVirtual;
 
 import br.com.replantapp.replant.domain.Sensor.Sensor;
+import br.com.replantapp.replant.domain.cardplanta.CardPlanta;
 import br.com.replantapp.replant.domain.usuario.Usuario;
 import jakarta.persistence.*;
 import lombok.*;
@@ -36,6 +37,11 @@ public class PlantaVirtual {
     })
     private Sensor sensor; //Mapping the plant's sensor
 
+    //ADICIONAR O @ManyToOne PRO CARDPLANTA (unidirecional, cardplanta n precisa saber de plantavirtual
+//    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "card_id", nullable = false) //Non-optional attribute
+//    private CardPlanta associatedCard;
+
     @Column(name = "foto")
     private String urlFoto;
 
@@ -63,6 +69,7 @@ public class PlantaVirtual {
                     plantaVirtual.getUrlFoto(),
                     plantaVirtual.getNome(),
                     plantaVirtual.getDescricao(),
+                    plantaVirtual.getUltimaRega(),
                     plantaVirtual.getUmidade());
         }
         sensorPlanta = plantaVirtual.getSensor();
@@ -74,6 +81,7 @@ public class PlantaVirtual {
                 plantaVirtual.getUrlFoto(),
                 plantaVirtual.getNome(),
                 plantaVirtual.getDescricao(),
+                plantaVirtual.getUltimaRega(),
                 plantaVirtual.getUmidade());
     }
     public static PlantaVirtualInfo mapToInfo(PlantaVirtual plantaVirtual){

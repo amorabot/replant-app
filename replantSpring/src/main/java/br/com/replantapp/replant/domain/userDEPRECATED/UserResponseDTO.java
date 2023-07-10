@@ -1,4 +1,4 @@
-package br.com.replantapp.replant.domain.user;
+package br.com.replantapp.replant.domain.userDEPRECATED;
 
 // DTO - Data Transfer Object
 // Serve para não trabalharmos diretamente com as entidades que representam a tabela User e usar objetos mais diretos e simples no lugar.
