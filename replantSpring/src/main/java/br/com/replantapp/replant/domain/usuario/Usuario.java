@@ -8,9 +8,6 @@ import br.com.replantapp.replant.enums.Themes;
 import jakarta.persistence.*;
 import lombok.*;
 
-//import java.util.ArrayList;
-//import java.util.List;
-
 @Entity(name="usuario")
 @Table(name="usuario") //precisa ser o nome da tabela no BD
 

@@ -3,7 +3,6 @@ package br.com.replantapp.replant.domain.enciclopedia;
 import br.com.replantapp.replant.domain.cardplanta.CardPlanta;
 import br.com.replantapp.replant.domain.cardplanta.CardPlantaResponseDTO;
 import br.com.replantapp.replant.domain.enciclopediaplantas.EnciclopediaPlantas;
-import br.com.replantapp.replant.domain.enciclopediaplantas.EnciclopediaPlantasDTO;
 import br.com.replantapp.replant.enums.Regions;
 import jakarta.persistence.*;
 import lombok.*;
@@ -45,11 +44,9 @@ public class Enciclopedia {
 
     public static EnciclopediaResponseDTO mapToDTO(Enciclopedia entity){
         Set<CardPlantaResponseDTO> allCardEntries = new HashSet<>();
-//        Set<Integer> allCardEntries = new HashSet<>();
 
         for (EnciclopediaPlantas entry : entity.getEnciclopediaPlantas()){
             allCardEntries.add(CardPlanta.mapToDTO(entry.getCard()));
-//            allCardEntries.add(entry.getCard().getId());
         }
 
         return new EnciclopediaResponseDTO(

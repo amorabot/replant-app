@@ -1,8 +1,5 @@
 package br.com.replantapp.replant.domain.cardplanta;
 
-import br.com.replantapp.replant.domain.enciclopedia.EnciclopediaResponseDTO;
-import br.com.replantapp.replant.domain.enciclopediaplantas.EnciclopediaPlantas;
-import br.com.replantapp.replant.domain.enciclopediaplantas.EnciclopediaPlantasDTO;
 import br.com.replantapp.replant.domain.nutrientesfav.NutrienteDTO;
 import org.springframework.lang.NonNull;
 

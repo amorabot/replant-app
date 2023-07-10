@@ -1,4 +1,4 @@
-package br.com.replantapp.replant.domain.Sensor;
+package br.com.replantapp.replant.domain.sensor;
 
 import org.springframework.lang.NonNull;
 

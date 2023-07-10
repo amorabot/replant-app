@@ -1,9 +1,9 @@
 package br.com.replantapp.replant.controller;
 
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtual;
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtualID;
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtualRepository;
-import br.com.replantapp.replant.domain.Sensor.*;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtual;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtualID;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtualRepository;
+import br.com.replantapp.replant.domain.sensor.*;
 import br.com.replantapp.replant.domain.usuario.Usuario;
 import br.com.replantapp.replant.domain.usuario.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -108,7 +108,6 @@ public class SensorController {
         sensor.setUmidade(sensorUpdateData.umidadeAtual()); //Umidade atualizada
 
         //Agora é preciso atualizar a umidade estimada da planta
-        // PRA ATUALIZAR OS DADOS DE ULTIMA REGA E UMIDADE, É NECESSÁRIO UM CARD PLANTA ASSOCIADO A PLANTA COMO PARAMETRO (teto para a barra de umidade ideal)
         // POR ENQUANTO A CADA CHAMADA A ULTIMA_REGA SERA ATUALIZADA E SUA UMIDADE ESTIMADA TAMBEM
         PlantaVirtual sensorsPlant = sensor.getPlanta();
         if (sensorsPlant == null){

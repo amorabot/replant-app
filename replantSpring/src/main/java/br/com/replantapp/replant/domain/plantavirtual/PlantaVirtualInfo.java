@@ -1,6 +1,4 @@
-package br.com.replantapp.replant.domain.PlantaVirtual;
-
-import org.springframework.lang.NonNull;
+package br.com.replantapp.replant.domain.plantavirtual;
 
 public record PlantaVirtualInfo(int plantaID,
                                 String nome,

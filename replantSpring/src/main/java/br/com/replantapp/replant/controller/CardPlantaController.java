@@ -4,7 +4,6 @@ import br.com.replantapp.replant.domain.cardplanta.CardPlanta;
 import br.com.replantapp.replant.domain.cardplanta.CardPlantaRepository;
 import br.com.replantapp.replant.domain.cardplanta.CardPlantaRequestDTO;
 import br.com.replantapp.replant.domain.cardplanta.CardPlantaResponseDTO;
-import br.com.replantapp.replant.domain.nutrientesfav.NutrienteDTO;
 import br.com.replantapp.replant.domain.nutrientesfav.NutrientesFavoritos;
 import br.com.replantapp.replant.domain.nutrientesfav.NutrientesRepository;
 import jakarta.transaction.Transactional;
@@ -55,20 +54,4 @@ public class CardPlantaController {
 
         return ResponseEntity.ok("Card criado.");
     }
-
-//    private CardPlantaResponseDTO mapToDTO(CardPlanta entity){
-//        Set<NutrienteDTO> nutrienteDTOSet = new HashSet<>();
-//        for (NutrientesFavoritos nutriente : entity.getNutrientesFavoritos()){
-//            nutrienteDTOSet.add(new NutrienteDTO(nutriente.getNutriente()));
-//        }
-//
-//        return new CardPlantaResponseDTO(entity.getId(),
-//                entity.getNome(),
-//                entity.getNomeCientifico(),
-//                entity.getDescricao(),
-//                entity.getRegiaoNativa(),
-//                entity.getTempoRega(),
-//                entity.getUmidadeIdeal(),
-//                nutrienteDTOSet);
-//    }
 }
