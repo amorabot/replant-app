@@ -83,4 +83,19 @@ public class CardPlanta {
                 nutrienteDTOSet,
                 associatedEnciclopedias);
     }
+
+    public static CardPlantaInfo mapToInfo(CardPlanta entity){
+        Set<NutrienteDTO> nutrienteDTOSet = new HashSet<>();
+        for (NutrientesFavoritos nutriente : entity.getNutrientesFavoritos()){
+            nutrienteDTOSet.add(new NutrienteDTO(nutriente.getNutriente()));
+        }
+
+        return new CardPlantaInfo(
+                entity.getNome(),
+                entity.getNomeCientifico(),
+                entity.getRegiaoNativa(),
+                entity.getTempoRega(),
+                entity.getUmidadeIdeal(),
+                nutrienteDTOSet);
+    }
 }

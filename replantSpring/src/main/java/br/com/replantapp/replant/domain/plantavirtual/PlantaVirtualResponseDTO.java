@@ -1,8 +1,10 @@
-package br.com.replantapp.replant.domain.PlantaVirtual;
+package br.com.replantapp.replant.domain.plantavirtual;
 
-import br.com.replantapp.replant.domain.Sensor.SensorInfo;
-import br.com.replantapp.replant.domain.Sensor.SensorResponseDTO;
+import br.com.replantapp.replant.domain.sensor.SensorInfo;
+import br.com.replantapp.replant.domain.cardplanta.CardPlantaInfo;
 import org.springframework.lang.NonNull;
+
+import java.util.Date;
 
 public record PlantaVirtualResponseDTO(@NonNull int plantID,
                                        @NonNull String ownerID,
@@ -11,6 +13,7 @@ public record PlantaVirtualResponseDTO(@NonNull int plantID,
                                        @NonNull String urlFoto,
                                        @NonNull String nome,
                                        @NonNull String descricao,
-                                       //ADICIONAR DADOS DA ULTIMA REGA
+                                       @NonNull Date ultimaRega,
+                                       @NonNull CardPlantaInfo plantaInfo,
                                        @NonNull int umidade) {
 }

@@ -1,9 +1,9 @@
 package br.com.replantapp.replant.controller;
 
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtual;
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtualID;
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtualRepository;
-import br.com.replantapp.replant.domain.Sensor.*;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtual;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtualID;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtualRepository;
+import br.com.replantapp.replant.domain.sensor.*;
 import br.com.replantapp.replant.domain.usuario.Usuario;
 import br.com.replantapp.replant.domain.usuario.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -11,8 +11,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.beans.Transient;
+import java.time.Instant;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -89,5 +90,36 @@ public class SensorController {
 
             return ResponseEntity.ok("Registro do sensor feito com sucesso!");
         }
+    }
+
+    @PutMapping
+    @Transactional
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<String> updateSensors(@RequestBody SensorUpdateRequestDTO sensorUpdateData){
+        //Essa função, na prática, responderia à chamada direta do sensor usando o metodo PUT, o body contém apenas o ID do sensor que fez a chamada e a umidade atual.
+        //Seria analisado então se o sensor que fez a chamada está associado à algum usuário e, se estiver, as mudanças são persistidas.
+
+        List<Sensor> sensorFromID = repository.findBySensorID_SerialId(sensorUpdateData.sensorSerialID());
+        //Por conta da unicidade do UUID, podemos garantir que a lista terá no máximo 1 valor, então o procedimento seguirá essa lógica
+        if (sensorFromID.size() == 0){
+            ResponseEntity.badRequest().body("Nenhum sensor com esse serial ID foi encontrado.");
+        }
+        Sensor sensor = sensorFromID.get(0);
+        sensor.setUmidade(sensorUpdateData.umidadeAtual()); //Umidade atualizada
+
+        //Agora é preciso atualizar a umidade estimada da planta
+        // POR ENQUANTO A CADA CHAMADA A ULTIMA_REGA SERA ATUALIZADA E SUA UMIDADE ESTIMADA TAMBEM
+        PlantaVirtual sensorsPlant = sensor.getPlanta();
+        if (sensorsPlant == null){
+            repository.save(sensor);
+            return ResponseEntity.ok("Sensor atualizado, mas nenhuma planta está associada.");
+        }
+
+        sensorsPlant.setUmidade(sensorUpdateData.umidadeAtual());
+        sensorsPlant.setUltimaRega(Date.from(Instant.now()));
+        plantaVirtualRepository.save(sensorsPlant);
+        repository.save(sensor);
+
+        return ResponseEntity.ok("Sensor atualizado!");
     }
 }

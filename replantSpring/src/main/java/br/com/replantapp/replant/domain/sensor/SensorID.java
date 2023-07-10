@@ -1,4 +1,4 @@
-package br.com.replantapp.replant.domain.Sensor;
+package br.com.replantapp.replant.domain.sensor;
 
 import br.com.replantapp.replant.domain.usuario.Usuario;
 import jakarta.persistence.*;

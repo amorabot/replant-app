@@ -1,9 +1,11 @@
 package br.com.replantapp.replant.controller;
 
-import br.com.replantapp.replant.domain.PlantaVirtual.*;
-import br.com.replantapp.replant.domain.Sensor.Sensor;
-import br.com.replantapp.replant.domain.Sensor.SensorID;
-import br.com.replantapp.replant.domain.Sensor.SensorRepository;
+import br.com.replantapp.replant.domain.plantavirtual.*;
+import br.com.replantapp.replant.domain.sensor.Sensor;
+import br.com.replantapp.replant.domain.sensor.SensorID;
+import br.com.replantapp.replant.domain.sensor.SensorRepository;
+import br.com.replantapp.replant.domain.cardplanta.CardPlanta;
+import br.com.replantapp.replant.domain.cardplanta.CardPlantaRepository;
 import br.com.replantapp.replant.domain.usuario.Usuario;
 import br.com.replantapp.replant.domain.usuario.UsuarioRepository;
 import jakarta.transaction.Transactional;
@@ -25,6 +27,8 @@ public class PlantaVirtualController {
     UsuarioRepository usuarioRepository;
     @Autowired
     SensorRepository sensorRepository;
+    @Autowired
+    CardPlantaRepository cardRepository;
 
     @GetMapping("/{userId}")
     @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -75,6 +79,14 @@ public class PlantaVirtualController {
         }
 
         novaPlanta.setPlantaID(plantaID);
+
+        //Criar associação entre planta e cardPlanta
+        Optional<CardPlanta> fetchedCard = cardRepository.findById(newPlantaVirtualData.cardID());
+        if (fetchedCard.isEmpty()){
+            return ResponseEntity.badRequest().body("O Card escolhido não está registrado em nenhum lugar!");
+        }//A partir daqui temos certeza de que há um card válido associado, portanto, basta associá-lo ao tamagotchi.
+        CardPlanta card = fetchedCard.get();
+        novaPlanta.setAssociatedCard(card);
 
         novaPlanta.setUrlFoto(newPlantaVirtualData.urlFoto());
         novaPlanta.setNome(newPlantaVirtualData.nome());

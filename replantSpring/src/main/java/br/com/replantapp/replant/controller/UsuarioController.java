@@ -6,7 +6,6 @@ import br.com.replantapp.replant.domain.usuario.Usuario;
 import br.com.replantapp.replant.domain.usuario.UsuarioRepository;
 import br.com.replantapp.replant.domain.usuario.UsuarioRequestDTO;
 import br.com.replantapp.replant.domain.usuario.UsuarioResponseDTO;
-import br.com.replantapp.replant.enums.Regions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -28,7 +27,6 @@ public class UsuarioController {
     public ResponseEntity<Set<UsuarioResponseDTO>> getAllUsuarios(){
         List<Usuario> userList = repository.findAll();
         System.out.println("Fetch bem sucedido!!");
-//        return ResponseEntity.ok(userList);
         Set<UsuarioResponseDTO> usuarioDTOList = new HashSet<>();
         for (Usuario usuario : userList){
             usuarioDTOList.add(Usuario.mapToDTO(usuario));
@@ -39,7 +37,6 @@ public class UsuarioController {
     @PostMapping
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ResponseEntity<String> registrerUsuario(@RequestBody @Validated UsuarioRequestDTO newUserData){
-//        System.out.println("testando saving da enciclopedia");
         Usuario novoUsuario = new Usuario(newUserData);
 
         String userEmail = novoUsuario.getEmail();

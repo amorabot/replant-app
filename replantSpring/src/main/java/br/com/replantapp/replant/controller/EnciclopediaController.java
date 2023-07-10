@@ -7,7 +7,6 @@ import br.com.replantapp.replant.domain.enciclopedia.EnciclopediaRepository;
 import br.com.replantapp.replant.domain.enciclopedia.EnciclopediaRequestDTO;
 import br.com.replantapp.replant.domain.enciclopedia.EnciclopediaResponseDTO;
 import br.com.replantapp.replant.domain.enciclopediaplantas.EnciclopediaPlantas;
-import br.com.replantapp.replant.domain.enciclopediaplantas.EnciclopediaPlantasID;
 import br.com.replantapp.replant.domain.enciclopediaplantas.EnciclopediaPlantasRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,7 +54,7 @@ public class EnciclopediaController {
         return ResponseEntity.ok("Registro de enciclopedia bem sucedido!");
     }
 
-    @PostMapping("/{enciclopediaId}")
+    @PutMapping("/{enciclopediaId}")
     @Transactional
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     public ResponseEntity<String> addCards(@PathVariable int enciclopediaId, @RequestBody List<Integer> cardIds){

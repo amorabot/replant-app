@@ -1,8 +1,7 @@
-package br.com.replantapp.replant.domain.Sensor;
+package br.com.replantapp.replant.domain.sensor;
 
 
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtual;
-import br.com.replantapp.replant.domain.usuario.Usuario;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtual;
 import jakarta.persistence.*;
 import lombok.*;
 

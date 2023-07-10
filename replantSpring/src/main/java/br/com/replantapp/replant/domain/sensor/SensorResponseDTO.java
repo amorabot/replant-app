@@ -1,6 +1,6 @@
-package br.com.replantapp.replant.domain.Sensor;
+package br.com.replantapp.replant.domain.sensor;
 
-import br.com.replantapp.replant.domain.PlantaVirtual.PlantaVirtualInfo;
+import br.com.replantapp.replant.domain.plantavirtual.PlantaVirtualInfo;
 import org.springframework.lang.NonNull;
 
 public record SensorResponseDTO(String serialId,

@@ -1,4 +1,4 @@
-package br.com.replantapp.replant.domain.PlantaVirtual;
+package br.com.replantapp.replant.domain.plantavirtual;
 
 import br.com.replantapp.replant.domain.usuario.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
