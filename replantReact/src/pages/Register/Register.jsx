@@ -3,16 +3,12 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Link from "@mui/material/Link";
-import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import "./Login.css";
+import "./Register.css";
 
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
@@ -23,12 +19,13 @@ export default function SignIn() {
     const data = new FormData(event.currentTarget);
     console.log({
       email: data.get("email"),
+      ConfirmarEmail: data.get("confirmarEmail"),
       password: data.get("senha"),
     });
   };
 
   return (
-    <div className="login-main-container pt-5">
+    <div className="register-main-container pt-5">
       <ThemeProvider theme={defaultTheme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
@@ -66,15 +63,21 @@ export default function SignIn() {
                 margin="normal"
                 required
                 fullWidth
+                id="ConfirmarEmail"
+                label="Confirmar Email"
+                name="confirmarEmail"
+                autoComplete="confirmarEmail"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
                 name="senha"
                 label="Senha"
                 type="senha"
                 id="senha"
                 autoComplete="current-password"
-              />
-              <FormControlLabel
-                control={<Checkbox value="remember" color="primary" />}
-                label="Lembre-se de mim"
               />
               <Button
                 type="submit"
@@ -82,20 +85,8 @@ export default function SignIn() {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Entrar
+                Cadastrar
               </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Esqueceu a senha?
-                  </Link>
-                </Grid>
-                <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Não tem uma conta? Cadastre-se"}
-                  </Link>
-                </Grid>
-              </Grid>
             </Box>
           </Box>
         </Container>

@@ -1,0 +1,5 @@
+.register-main-container {
+    background-image: linear-gradient(to right top, #b5e8de, #c0e8d5, #cde8ce, #dae7ca, #e6e6c9, #e6e6c9, #e6e6c9, #e6e6c9, #dae7ca, #cde8ce, #c0e8d5, #b5e8de);
+    padding: 24px 0;
+    min-height: 100vh;
+}

@@ -1,0 +1,1 @@
+[] - Make the Nav icons recieve the active class on the click.
