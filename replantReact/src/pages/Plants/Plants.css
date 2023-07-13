@@ -1,0 +1,50 @@
+.plants-main-container {
+    background-image: linear-gradient(to right top, #b5e8de, #c0e8d5, #cde8ce, #dae7ca, #e6e6c9, #e6e6c9, #e6e6c9, #e6e6c9, #dae7ca, #cde8ce, #c0e8d5, #b5e8de);
+    padding: 90px 0;
+    min-height: 100vh;
+}
+
+.page-title {
+    color: #F1F8F9;
+    font-size: 5rem;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.create-plant-icon {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+    font-size: 5rem;
+    color: #F2F7F2;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    z-index: 999;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.create-plant-icon:hover {
+    color: #0AB8BF;
+    transform: scale(0.98);
+}
+
+.carousel-container .carousel-arrow {
+
+    color: #F2F7F2;
+    font-size: 5rem;
+}
+
+.icon-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.carousel-container {
+    padding: 16px;
+}
+
+.styles-module_item-container__a8zaY {
+    overflow: visible;
+}

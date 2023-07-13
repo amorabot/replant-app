@@ -153,25 +153,25 @@ const Home = () => {
         <div className="container mb-5 mt-3">
           <h2 className="text-center title mb-5">Jardineiros Satisfeitos</h2>
 
-          <div class="row text-center d-flex align-items-stretch">
-            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
-              <div class="card testimonial-card">
+          <div className="row text-center d-flex align-items-stretch">
+            <div className="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div className="card testimonial-card">
                 <div
-                  class="card-up"
+                  className="card-up"
                   style={{ backgroundColor: "#9d789b" }}
                 ></div>
-                <div class="avatar mx-auto bg-white">
+                <div className="avatar mx-auto bg-white">
                   <img
                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp"
-                    class="rounded-circle img-fluid"
+                    className="rounded-circle img-fluid"
                     alt="User Profile Avatar"
                   />
                 </div>
-                <div class="card-body">
-                  <h4 class="mb-4">Jardineiro 1</h4>
+                <div className="card-body">
+                  <h4 className="mb-4">Jardineiro 1</h4>
                   <hr />
-                  <p class="dark-grey-text mt-4">
-                    <i class="fas fa-quote-left pe-2"></i>O Replant foi uma
+                  <p className="dark-grey-text mt-4">
+                    <i className="fas fa-quote-left pe-2"></i>O Replant foi uma
                     descoberta maravilhosa para mim! Como moradora de um
                     apartamento pequeno, sempre desejei ter um jardim, mas não
                     sabia por onde começar. O Replant me guiou passo a passo,
@@ -183,24 +183,24 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
-              <div class="card testimonial-card">
+            <div className="col-md-4 mb-5 mb-md-0 d-flex align-items-stretch">
+              <div className="card testimonial-card">
                 <div
-                  class="card-up"
+                  className="card-up"
                   style={{ backgroundColor: "#7a81a8" }}
                 ></div>
-                <div class="avatar mx-auto bg-white">
+                <div className="avatar mx-auto bg-white">
                   <img
                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(2).webp"
-                    class="rounded-circle img-fluid"
+                    className="rounded-circle img-fluid"
                     alt="User Profile Avatar"
                   />
                 </div>
-                <div class="card-body">
-                  <h4 class="mb-4">Jardineiro 2</h4>
+                <div className="card-body">
+                  <h4 className="mb-4">Jardineiro 2</h4>
                   <hr />
-                  <p class="dark-grey-text mt-4">
-                    <i class="fas fa-quote-left pe-2"></i>Como um jardineiro
+                  <p className="dark-grey-text mt-4">
+                    <i className="fas fa-quote-left pe-2"></i>Como um jardineiro
                     novato, o Replant foi um verdadeiro salvador para mim. Eu
                     sempre tive o desejo de cultivar meu próprio jardim, mas não
                     sabia por onde começar. O Replant ofereceu recursos fáceis
@@ -210,24 +210,24 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div class="col-md-4 mb-0 d-flex align-items-stretch">
-              <div class="card testimonial-card">
+            <div className="col-md-4 mb-0 d-flex align-items-stretch">
+              <div className="card testimonial-card">
                 <div
-                  class="card-up"
+                  className="card-up"
                   style={{ backgroundColor: "#6d5b98" }}
                 ></div>
-                <div class="avatar mx-auto bg-white">
+                <div className="avatar mx-auto bg-white">
                   <img
                     src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(9).webp"
-                    class="rounded-circle img-fluid"
+                    className="rounded-circle img-fluid"
                     alt="User Profile Avatar"
                   />
                 </div>
-                <div class="card-body">
-                  <h4 class="mb-4">Jardineiro 3</h4>
+                <div className="card-body">
+                  <h4 className="mb-4">Jardineiro 3</h4>
                   <hr />
-                  <p class="dark-grey-text mt-4">
-                    <i class="fas fa-quote-left pe-2"></i>Como amante da
+                  <p className="dark-grey-text mt-4">
+                    <i className="fas fa-quote-left pe-2"></i>Como amante da
                     natureza, o Replant se tornou meu refúgio online favorito. A
                     plataforma oferece uma riqueza de informações sobre plantas,
                     dicas de jardinagem e práticas sustentáveis. Eu amo como
