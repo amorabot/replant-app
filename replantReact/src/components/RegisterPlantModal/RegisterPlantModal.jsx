@@ -7,7 +7,6 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import api from "../../services/api";
 import InputLabel from "@mui/material/InputLabel";
-import Typography from "@mui/material/Typography";
 import { useSpring, animated } from "@react-spring/web";
 import "./RegisterPlantModal.css";
 import { MultiSelect } from "react-multi-select-component";
@@ -59,7 +58,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: "75%",
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
@@ -89,12 +88,11 @@ export default function RegisterPlantModal(props) {
   const registerPlant = () => {
     const plant = {
       nome: plantConventionalName,
-      nomeCientifico: plantConventionalName,
-      nome_cientifico: plantScientificName,
-      regiao_nativa: plantNativeRegion,
+      nomeCientifico: plantScientificName,
       descricao: plantDescription,
-      tempo_rega: plantTimeToWater,
-      umidade_ideal: plantIdealUmidity,
+      regiaoNativa: plantNativeRegion,
+      tempoRega: plantTimeToWater,
+      umidadeIdeal: plantIdealUmidity,
       nutrientesFavoritos: plantNutrients.map((nutrient) => {
         return {
           nutriente: nutrient.label,
@@ -135,61 +133,63 @@ export default function RegisterPlantModal(props) {
             TransitionComponent: Fade,
           },
         }}
+        id="registerPlantModal"
       >
         <Fade in={open}>
           <Box sx={style}>
-            <Typography id="spring-modal-title" variant="h4" component="h2">
-              Cadastre sua Planta
-            </Typography>
-            <TextField
-              id="conventional-name"
-              label="Nome Convencional da Planta"
-              variant="outlined"
-              className="w-100 mt-3"
-              onChange={(e) => setPlantConventionalName(e.target.value)}
-            />
-            <TextField
-              id="scientific-name"
-              label="Nome Científico da Planta"
-              variant="outlined"
-              className="w-100 mt-3"
-              onChange={(e) => setPlantScientificName(e.target.value)}
-            />
+            <h3 id="spring-modal-title" variant="h4" component="h2">
+              Nova Planta
+            </h3>
+            <div className="flexer-container">
+              <TextField
+                id="conventional-name"
+                label="Nome Convencional da Planta"
+                variant="outlined"
+                className="w-100 mt-3 "
+                onChange={(e) => setPlantConventionalName(e.target.value)}
+              />
+              <TextField
+                id="scientific-name"
+                label="Nome Científico da Planta"
+                variant="outlined"
+                className="w-100 mt-3"
+                onChange={(e) => setPlantScientificName(e.target.value)}
+              />
+            </div>
+            <div className="flexer-container">
+              <TextField
+                id="native-region"
+                label="Região Nativa"
+                variant="outlined"
+                className="w-100 mt-3"
+                onChange={(e) => setPlantNativeRegion(e.target.value)}
+              />
+              <TextField
+                id="time-to-water"
+                label="Tempo para regar"
+                variant="outlined"
+                className="w-100 mt-3"
+                type="number"
+                onChange={(e) => setPlantTimeToWater(e.target.value)}
+              />
 
-            <TextField
-              id="native-region"
-              label="Região Nativa"
-              variant="outlined"
-              className="w-100 mt-3"
-              onChange={(e) => setPlantNativeRegion(e.target.value)}
-            />
-
+              <TextField
+                id="umidity"
+                label="Umidade Ideal"
+                variant="outlined"
+                className="w-100 mt-3"
+                type="number"
+                onChange={(e) => setPlantIdealUmidity(e.target.value)}
+              />
+            </div>{" "}
             <TextField
               id="description"
               label="Descrição"
               variant="outlined"
               multiline
-              rows={4}
+              rows={3}
               className="w-100 mt-3"
               onChange={(e) => setPlantDescription(e.target.value)}
-            />
-
-            <TextField
-              id="time-to-water"
-              label="Tempo para regar"
-              variant="outlined"
-              className="w-100 mt-3"
-              type="number"
-              onChange={(e) => setPlantTimeToWater(e.target.value)}
-            />
-
-            <TextField
-              id="umidity"
-              label="Umidade Ideal"
-              variant="outlined"
-              className="w-100 mt-3"
-              type="number"
-              onChange={(e) => setPlantIdealUmidity(e.target.value)}
             />
             <InputLabel className="mt-2" id="demo-simple-select-label">
               Nutrientes
@@ -208,10 +208,11 @@ export default function RegisterPlantModal(props) {
             />
             <Button
               variant="contained"
-              className="mt-4 w-100"
+              className="mt-4 w-100 register-plant-button"
               onClick={registerPlant}
+              size="large"
             >
-              Cadastrar
+              Registrar Planta
             </Button>
           </Box>
         </Fade>

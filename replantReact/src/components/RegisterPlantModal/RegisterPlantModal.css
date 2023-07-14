@@ -14,3 +14,68 @@
     color: #0AB8BF;
     transform: scale(0.98);
 }
+
+#spring-modal-title {
+
+    color: #F2F7F2;
+    /* padrão clicável */
+    text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.5);
+    /* Título de destaque */
+    font-family: Ubuntu;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    /* I need to make it go twice above */
+    transform: translateY(-175%);
+    position: fixed;
+}
+
+#registerPlantModal .MuiBox-root {
+    border-radius: 16px !important;
+    background: transparent !important;
+
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.70) 0%, rgba(154, 186, 168, 0.90) 99.03%) !important;
+    backdrop-filter: blur(100px);
+    border: none !important;
+}
+
+#registerPlantModal .MuiModal-backdrop {
+    background-color: unset !important;
+    backdrop-filter: blur(7px) !important;
+}
+
+.rmsc .dropdown-container {
+    background: transparent !important;
+    border: 1px rgba(0, 0, 0, 0.3) solid !important;
+}
+
+.rmsc .gray {
+    color: rgba(0, 0, 0, 0.87) !important;
+}
+
+.rmsc .dropdown-heading {
+    height: 50px !important;
+}
+
+.flexer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .flexer-container {
+        flex-direction: column;
+    }
+}
+
+.register-plant-button {
+    background-color: #0AB8BF !important;
+    border-radius: 16px !important;
+    text-transform: none !important;
+    font-family: Ubuntu !important;
+    font-weight: 700 !important;
+    font-size: 20px !important;
+}

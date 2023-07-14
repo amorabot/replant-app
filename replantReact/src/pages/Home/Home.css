@@ -20,7 +20,8 @@ h3 {
 }
 
 .welcome-title {
-    font-size: 32px;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 32px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -36,7 +37,8 @@ h3 {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    letter-spacing: 1.5px;  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
 }
 
@@ -112,9 +114,10 @@ h3 {
 }
 
 @media(max-width: 768px) {
-    #OurFunctionalities  {
+    #OurFunctionalities {
         text-align: center;
     }
+
     .functionality-container-reversed {
         flex-direction: column-reverse;
     }
@@ -128,4 +131,8 @@ h3 {
 #Feedbacks .title {
     color: #FFA26E;
     font-size: 60px;
+}
+
+.video-element {
+    max-width: 100%;
 }
