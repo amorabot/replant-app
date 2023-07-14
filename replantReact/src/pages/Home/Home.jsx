@@ -9,7 +9,7 @@ const Home = () => {
           <div className="row">
             <div className="col-12 col-md-6">
               <img
-                src={require("../../assets/smilling_plant.png")}
+                src={require("../../assets/main_bg.png")}
                 alt="Smilling Plant"
                 className="img-fluid"
               />
@@ -101,7 +101,7 @@ const Home = () => {
             </div>
             <div className="col-12 col-md-6">
               <img
-                src={require("../../assets/rectangle.png")}
+                src={require("../../assets/cactus.png")}
                 alt="Rectangle"
                 className="img-fluid"
               />
@@ -110,20 +110,17 @@ const Home = () => {
           <div className="row mt-5 functionality-container-reversed">
             <div className="col-12 col-md-6">
               <img
-                src={require("../../assets/rectangle.png")}
+                src={require("../../assets/cards_example.png")}
                 alt="Rectangle"
                 className="img-fluid"
               />
             </div>
             <div className="col-12 col-md-6 d-flex flex-column justify-content-evenly">
-              <h3 className="subtitle">Aprenda na biblioteca</h3>
+              <h3 className="subtitle">Crie o seu jardim virtual</h3>
               <p className="sub-text">
-                Bem-vindo ao universo encantador dos Plants! Aqui, convidamos
-                você a se aventurar em um mundo onde o conhecimento sobre
-                plantas floresce e prospera. Prepare-se para explorar o
-                fascinante reino vegetal e mergulhar em uma jornada de
-                descobertas botânicas. Os Plants são seus companheiros virtuais
-                para a busca do conhecimento sobre plantas.
+              Quando quiser saber sobre qualquer coisa do universo de jardinagem, 
+              utilize da nossa jardim de plantas que contém todas as informações
+              que você precisa para realizar os cuidados necessários das do seu jardim!
               </p>
             </div>
           </div>
@@ -131,19 +128,15 @@ const Home = () => {
             <div className="col-12 col-md-6 d-flex flex-column justify-content-evenly">
               <h3 className="subtitle">Sincronize com sensores!</h3>
               <p className="sub-text">
-                Bem-vindo ao universo encantador dos Plants! Aqui, convidamos
-                você a se aventurar em um mundo onde o conhecimento sobre
-                plantas floresce e prospera. Prepare-se para explorar o
-                fascinante reino vegetal e mergulhar em uma jornada de
-                descobertas botânicas. Os Plants são seus companheiros virtuais
-                para a busca do conhecimento sobre plantas.
+              Conte ainda com nosso sistema de sensores que monitoram a sua planta em tempo real e facilitam muito a sua vida e a da suas plantinhas também. 
+              Através dele é possivel cuidar de cada planta individualmente com o auxilio dos avisos e notificações para manter você sempre atento as necessidades de suas plantas,
+              com nossa ajuda o processo de jardinagem e plantio fica muito mais facil.
               </p>
             </div>
             <div className="col-12 col-md-6">
-              <img
-                src={require("../../assets/rectangle.png")}
-                alt="Rectangle"
-                className="img-fluid"
+              <video
+                src={require("../../assets/video.mp4")}
+                className="video-element"
               />
             </div>
           </div>
